@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Store</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>Acquista il tuo biglietto!</h1>
+    </header>
+    <main class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Stai acquistando l'evento:</h2>
+          <p>{{ event.event_name }}</p>
+        </div>
+        <div class="col-md-8">
+          <form>
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Inserisci il tuo nome"
+                style="width: 30ch"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Inserisci la tua email"
+                style="width: 30ch"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefono</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="phone"
+                placeholder="Inserisci il tuo numero di telefono"
+                style="width: 30ch"
+              />
+            </div>
+            <div class="form-group"></div>
+              <label for="event">Evento</label>
+              <input
+                type="text"
+                class="form-control"
+                id="event"
+                value="{{ event.event_name }}"
+                style="width: 30ch"
+              />
+              <label for="date">Data</label>
+              <select class="form-control" id="date" style="width: 30ch">
+                <option>{{ date }}</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Acquista</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p style="text-align: center">
+        &copy; 2025 Ticket Store. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
